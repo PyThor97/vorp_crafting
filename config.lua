@@ -4,7 +4,7 @@ Config.defaultlang = "en_lang"
 
 Config.DevMode = false -- enable this if you want to make testes, dont leave true in live servers
 
-Config.Webhook = ''    -- WEBHOOK VORPCORE
+--Webhook move to server.lua line 26 
 
 Config.CampFireItem = "campfire"
 
