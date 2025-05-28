@@ -23,6 +23,7 @@ RegisterNetEvent('vorp:startcrafting', function(craftable, countz)
     local _source = source
     local Character = Core.getUser(_source).getUsedCharacter
 
+    local Webhook = '' -- Set your webhook URL here
     local function getServerCraftable()
         local crafting = nil
         for _, v in ipairs(Config.Crafting) do
@@ -144,7 +145,7 @@ RegisterNetEvent('vorp:startcrafting', function(craftable, countz)
             for _, v in ipairs(reward) do
                 for _ = 1, v.count do
                     exports.vorp_inventory:createWeapon(_source, v.name, ammo, components)
-                    Core.AddWebhook(GetPlayerName(_source), Config.Webhook, _U('WebhookWeapon') .. ' ' .. v.name)
+                    Core.AddWebhook(GetPlayerName(_source), Webhook, _U('WebhookWeapon') .. ' ' .. v.name)
                 end
             end
         end
@@ -175,7 +176,7 @@ RegisterNetEvent('vorp:startcrafting', function(craftable, countz)
                     Character.addCurrency(crafting.CurrencyType, countx)
                 else
                     exports.vorp_inventory:addItem(_source, v.name, countx)
-                    Core.AddWebhook(GetPlayerName(_source), Config.Webhook, _U('WebhookItem') .. ' x' .. countx .. ' ' .. v.name)
+                    Core.AddWebhook(GetPlayerName(_source), Webhook, _U('WebhookItem') .. ' x' .. countx .. ' ' .. v.name)
                 end
             end
 
