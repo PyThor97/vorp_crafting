@@ -46,6 +46,9 @@ if Config.Commands.extinguish == true then
             ClearPedTasksImmediately(PlayerPedId())
             DeleteObject(campfire)
             campfire = 0
+            if Config.ReturnItemAfterExtinguish then
+                TriggerServerEvent('vorp_crafting:ReturnItem')
+            end
         end
     end, false)
 end
