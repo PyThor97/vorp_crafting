@@ -186,3 +186,7 @@ RegisterNetEvent('vorp:startcrafting', function(craftable, countz)
         end
     end
 end)
+
+RegisterNetEvent('vorp_crafting:ReturnItem', function()
+    exports.vorp_inventory:addItem(source, Config.CampFireItem, 1)
+end)
