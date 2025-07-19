@@ -8,6 +8,9 @@ Config.DevMode = false -- enable this if you want to make testes, dont leave tru
 
 Config.CampFireItem = "campfire"
 
+-- *New* you can give the item back to the player after they tear down the campfire
+Config.ReturnItemAfterExtinguish = true
+
 -- Crafting Key
 Config.Keys = {
     G = 0x760A9C6F
