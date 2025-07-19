@@ -10,7 +10,7 @@ local function placeCampfire()
 
     local playerPed = PlayerPedId()
     Animations.playAnimation(playerPed, "campfire")
-
+    exports.vorp_inventory:closeInventory()
     progressbar.start(_U('PlaceFire'), 20000, function()
         Animations.endAnimation("campfire")
         Animations.endAnimations()
